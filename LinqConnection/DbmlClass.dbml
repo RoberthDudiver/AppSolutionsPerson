@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBPeople" Class="DbmlClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-S3587HV\MSSQLSERVER2;Initial Catalog=DBPeople;Integrated Security=True" SettingsObjectName="LinqConnection.My.MySettings" SettingsPropertyName="DBPeopleConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DTCountries" Member="DTCountries">
+    <Type Name="DTCountries">
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTPeople" Member="DTPeople">
+    <Type Name="DTPeople">
+      <Column Name="IDPeople" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TypeDocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addres" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PrincipalPhone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UpdateUpd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DTDocumentsType" Member="DTDocumentsType">
+    <Type Name="DTDocumentsType">
+      <Column Name="TypeDocumentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeDocument" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VWInfoPeople" Member="VWInfoPeople">
+    <Type Name="VWInfoPeople">
+      <Column Name="IDPeople" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TypeDocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Addres" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PrincipalPhone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UpdateUpd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TypeDocument" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

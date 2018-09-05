@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllPeopleView">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPeopleViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPeopleViewResult" type="tns:ArrayOfVWInfoPeople" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVWInfoPeople">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VWInfoPeople" nillable="true" type="tns:VWInfoPeople" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VWInfoPeople">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IDPeople" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecondName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TypeDocumentID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrincipalPhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateUpd" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeDocument" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDataAllPeople">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDataAllPeopleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataAllPeopleResult" type="tns:ArrayOfDTPeople" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTPeople">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTPeople" nillable="true" type="tns:DTPeople" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTPeople">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IDPeople" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecondName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TypeDocumentID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrincipalPhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateUpd" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPeopleByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="value" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPeopleByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPeopleByIDResult" type="tns:DTPeople" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDTDocumentsType">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDTDocumentsTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDTDocumentsTypeResult" type="tns:ArrayOfDTDocumentsType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTDocumentsType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTDocumentsType" nillable="true" type="tns:DTDocumentsType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTDocumentsType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TypeDocumentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeDocument" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDTCountries">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDTCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDTCountriesResult" type="tns:ArrayOfDTCountries" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTCountries">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTCountries" nillable="true" type="tns:DTCountries" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTCountries">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CountryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetPeople">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="item" type="tns:DTPeople" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPeopleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPeopleResult" type="tns:DTPeople" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletetDTPeople">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="item" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletetDTPeopleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletetDTPeopleResult" type="tns:DTPeople" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllPeopleViewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPeopleView" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPeopleViewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPeopleViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataAllPeopleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataAllPeople" />
+  </wsdl:message>
+  <wsdl:message name="GetDataAllPeopleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataAllPeopleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPeopleByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPeopleByID" />
+  </wsdl:message>
+  <wsdl:message name="GetPeopleByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPeopleByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDTDocumentsTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDTDocumentsType" />
+  </wsdl:message>
+  <wsdl:message name="GetDTDocumentsTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDTDocumentsTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDTCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDTCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetDTCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDTCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPeopleSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPeople" />
+  </wsdl:message>
+  <wsdl:message name="SetPeopleSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPeopleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletetDTPeopleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletetDTPeople" />
+  </wsdl:message>
+  <wsdl:message name="DeletetDTPeopleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletetDTPeopleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="GetAllPeopleView">
+      <wsdl:input message="tns:GetAllPeopleViewSoapIn" />
+      <wsdl:output message="tns:GetAllPeopleViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataAllPeople">
+      <wsdl:input message="tns:GetDataAllPeopleSoapIn" />
+      <wsdl:output message="tns:GetDataAllPeopleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleByID">
+      <wsdl:input message="tns:GetPeopleByIDSoapIn" />
+      <wsdl:output message="tns:GetPeopleByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDTDocumentsType">
+      <wsdl:input message="tns:GetDTDocumentsTypeSoapIn" />
+      <wsdl:output message="tns:GetDTDocumentsTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDTCountries">
+      <wsdl:input message="tns:GetDTCountriesSoapIn" />
+      <wsdl:output message="tns:GetDTCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPeople">
+      <wsdl:input message="tns:SetPeopleSoapIn" />
+      <wsdl:output message="tns:SetPeopleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletetDTPeople">
+      <wsdl:input message="tns:DeletetDTPeopleSoapIn" />
+      <wsdl:output message="tns:DeletetDTPeopleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllPeopleView">
+      <soap:operation soapAction="http://tempuri.org/GetAllPeopleView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataAllPeople">
+      <soap:operation soapAction="http://tempuri.org/GetDataAllPeople" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleByID">
+      <soap:operation soapAction="http://tempuri.org/GetPeopleByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDTDocumentsType">
+      <soap:operation soapAction="http://tempuri.org/GetDTDocumentsType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDTCountries">
+      <soap:operation soapAction="http://tempuri.org/GetDTCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPeople">
+      <soap:operation soapAction="http://tempuri.org/SetPeople" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetDTPeople">
+      <soap:operation soapAction="http://tempuri.org/DeletetDTPeople" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllPeopleView">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPeopleView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataAllPeople">
+      <soap12:operation soapAction="http://tempuri.org/GetDataAllPeople" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleByID">
+      <soap12:operation soapAction="http://tempuri.org/GetPeopleByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDTDocumentsType">
+      <soap12:operation soapAction="http://tempuri.org/GetDTDocumentsType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDTCountries">
+      <soap12:operation soapAction="http://tempuri.org/GetDTCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPeople">
+      <soap12:operation soapAction="http://tempuri.org/SetPeople" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletetDTPeople">
+      <soap12:operation soapAction="http://tempuri.org/DeletetDTPeople" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost:5872/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost:5872/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
