@@ -2,28 +2,34 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DbmlClass">
   <DataContextMoniker Name="/DbmlClassDataContext" />
   <nestedChildShapes>
-    <classShape Id="34f64213-6efb-48f8-8364-053105ca6e7b" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/DbmlClassDataContext/DTCountries" />
+    <classShape Id="a1c4b11f-931b-45ca-becf-21a84361239f" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DbmlClassDataContext/DTCountry" />
       <nestedChildShapes>
-        <elementListCompartment Id="2079f38a-0bc0-4c02-b244-64a22498bc1c" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9d4b2cb9-bcad-4734-be82-d9edf5cb9e04" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2adb80b7-507a-4f16-afea-56304c88e247" absoluteBounds="3.5, 1.875, 2, 2.9247054036458322">
+    <classShape Id="87700053-cd4d-4744-b02f-463ea365f087" absoluteBounds="3.5, 1.75, 2, 3.1170068359375005">
       <DataClassMoniker Name="/DbmlClassDataContext/DTPeople" />
       <nestedChildShapes>
-        <elementListCompartment Id="30a85057-f911-4ab0-a157-8a2ba73f7934" absoluteBounds="3.515, 2.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4ccc45e1-3f28-4bb1-9242-bd2eba7cdeb7" absoluteBounds="3.515, 2.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7355dac6-f955-4f1a-82cc-c1ca31ac428d" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+    <classShape Id="118e99ac-0fbc-4a86-8e66-9e96a7c51d0c" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/DbmlClassDataContext/DTDocumentsType" />
       <nestedChildShapes>
-        <elementListCompartment Id="a4405271-343e-473d-9084-34555686e4bc" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e00309af-0cf4-489b-9be4-287bef005d3a" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="178a2006-e5ac-452a-a8ef-e235ba1aff01" absoluteBounds="5.625, 1, 2, 3.3093082682291666">
+    <classShape Id="a949ffb3-d9bc-464a-8016-20bc06d443cd" absoluteBounds="3.75, 6.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DbmlClassDataContext/VWPeopleGeneral" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b649510-a22c-441a-bc1d-d45890569d29" absoluteBounds="3.765, 6.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a3c5b74-8ddb-44c5-86f5-901d0a50c7f0" absoluteBounds="6.75, 2.5, 2, 3.6939111328124996">
       <DataClassMoniker Name="/DbmlClassDataContext/VWInfoPeople" />
       <nestedChildShapes>
-        <elementListCompartment Id="97602da7-c3d3-4b6f-a674-520759809945" absoluteBounds="5.64, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6264e3cd-7d86-4edc-8e03-6f439bf38109" absoluteBounds="6.765, 2.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

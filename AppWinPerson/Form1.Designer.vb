@@ -24,30 +24,40 @@ Partial Class PersonaFrm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GridView = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CountryID = New System.Windows.Forms.ComboBox()
-        Me.TypeDocumentID = New System.Windows.Forms.ComboBox()
-        Me.BirthDate = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.menu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Age = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Sex = New System.Windows.Forms.ComboBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BirthDate = New System.Windows.Forms.DateTimePicker()
+        Me.CountryID = New System.Windows.Forms.ComboBox()
         Me.Addres = New CustomControls.PersonTexBox()
         Me.PrincipalPhone = New CustomControls.PersonTexBox()
+        Me.TypeDocumentID = New System.Windows.Forms.ComboBox()
         Me.Name1 = New CustomControls.PersonTexBox()
         Me.DocumentID = New CustomControls.PersonTexBox()
         Me.SecondName = New CustomControls.PersonTexBox()
+        Me.Nombres = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Edad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Sexo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.GridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.menu.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GridView
         '
         Me.GridView.AllowUserToAddRows = False
         Me.GridView.AllowUserToDeleteRows = False
+        Me.GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombres, Me.Apellidos, Me.Edad, Me.Sexo})
         Me.GridView.ContextMenuStrip = Me.menu
         Me.GridView.Location = New System.Drawing.Point(12, 235)
         Me.GridView.Name = "GridView"
@@ -56,10 +66,26 @@ Partial Class PersonaFrm
         Me.GridView.Size = New System.Drawing.Size(605, 213)
         Me.GridView.TabIndex = 0
         '
+        'menu
+        '
+        Me.menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem})
+        Me.menu.Name = "menu"
+        Me.menu.Size = New System.Drawing.Size(118, 26)
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Age)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Sex)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.BirthDate)
         Me.Panel1.Controls.Add(Me.CountryID)
@@ -74,28 +100,62 @@ Partial Class PersonaFrm
         Me.Panel1.Size = New System.Drawing.Size(568, 217)
         Me.Panel1.TabIndex = 2
         '
-        'CountryID
+        'Age
         '
-        Me.CountryID.FormattingEnabled = True
-        Me.CountryID.Location = New System.Drawing.Point(27, 125)
-        Me.CountryID.Name = "CountryID"
-        Me.CountryID.Size = New System.Drawing.Size(261, 21)
-        Me.CountryID.TabIndex = 6
+        Me.Age.AutoSize = True
+        Me.Age.ForeColor = System.Drawing.Color.Gray
+        Me.Age.Location = New System.Drawing.Point(62, 195)
+        Me.Age.Name = "Age"
+        Me.Age.Size = New System.Drawing.Size(13, 13)
+        Me.Age.TabIndex = 11
+        Me.Age.Text = "0"
         '
-        'TypeDocumentID
+        'Label3
         '
-        Me.TypeDocumentID.FormattingEnabled = True
-        Me.TypeDocumentID.Location = New System.Drawing.Point(167, 100)
-        Me.TypeDocumentID.Name = "TypeDocumentID"
-        Me.TypeDocumentID.Size = New System.Drawing.Size(121, 21)
-        Me.TypeDocumentID.TabIndex = 5
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(24, 195)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Edad"
         '
-        'BirthDate
+        'Sex
         '
-        Me.BirthDate.Location = New System.Drawing.Point(27, 165)
-        Me.BirthDate.Name = "BirthDate"
-        Me.BirthDate.Size = New System.Drawing.Size(261, 20)
-        Me.BirthDate.TabIndex = 7
+        Me.Sex.FormattingEnabled = True
+        Me.Sex.Items.AddRange(New Object() {"Femenino", "Masculino"})
+        Me.Sex.Location = New System.Drawing.Point(166, 191)
+        Me.Sex.Name = "Sex"
+        Me.Sex.Size = New System.Drawing.Size(124, 21)
+        Me.Sex.TabIndex = 9
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(493, 187)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(62, 28)
+        Me.Button2.TabIndex = 8
+        Me.Button2.Text = "Cancelar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(432, 187)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(55, 28)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Aceptar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(129, 194)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(31, 13)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Sexo"
         '
         'Label1
         '
@@ -107,35 +167,20 @@ Partial Class PersonaFrm
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Fecha de Cumpleaños"
         '
-        'Button1
+        'BirthDate
         '
-        Me.Button1.Location = New System.Drawing.Point(432, 187)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(55, 28)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Aceptar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BirthDate.Location = New System.Drawing.Point(27, 165)
+        Me.BirthDate.Name = "BirthDate"
+        Me.BirthDate.Size = New System.Drawing.Size(261, 20)
+        Me.BirthDate.TabIndex = 7
         '
-        'Button2
+        'CountryID
         '
-        Me.Button2.Location = New System.Drawing.Point(493, 187)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(62, 28)
-        Me.Button2.TabIndex = 8
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'menu
-        '
-        Me.menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem})
-        Me.menu.Name = "menu"
-        Me.menu.Size = New System.Drawing.Size(118, 26)
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        Me.CountryID.FormattingEnabled = True
+        Me.CountryID.Location = New System.Drawing.Point(27, 125)
+        Me.CountryID.Name = "CountryID"
+        Me.CountryID.Size = New System.Drawing.Size(261, 21)
+        Me.CountryID.TabIndex = 6
         '
         'Addres
         '
@@ -162,16 +207,24 @@ Partial Class PersonaFrm
         Me.PrincipalPhone.TabIndex = 3
         Me.PrincipalPhone.Text = "Telefono"
         '
+        'TypeDocumentID
+        '
+        Me.TypeDocumentID.FormattingEnabled = True
+        Me.TypeDocumentID.Location = New System.Drawing.Point(167, 100)
+        Me.TypeDocumentID.Name = "TypeDocumentID"
+        Me.TypeDocumentID.Size = New System.Drawing.Size(121, 21)
+        Me.TypeDocumentID.TabIndex = 5
+        '
         'Name1
         '
         Me.Name1.change = False
         Me.Name1.ForeColor = System.Drawing.Color.Gray
         Me.Name1.Location = New System.Drawing.Point(27, 22)
         Me.Name1.Name = "Name1"
-        Me.Name1.PlaceHolder = "Nombre"
+        Me.Name1.PlaceHolder = "Nombres"
         Me.Name1.Size = New System.Drawing.Size(261, 20)
         Me.Name1.TabIndex = 1
-        Me.Name1.Text = "Nombre"
+        Me.Name1.Text = "Nombres"
         '
         'DocumentID
         '
@@ -190,10 +243,39 @@ Partial Class PersonaFrm
         Me.SecondName.ForeColor = System.Drawing.Color.Gray
         Me.SecondName.Location = New System.Drawing.Point(27, 48)
         Me.SecondName.Name = "SecondName"
-        Me.SecondName.PlaceHolder = "Apellido"
+        Me.SecondName.PlaceHolder = "Apellidos"
         Me.SecondName.Size = New System.Drawing.Size(261, 20)
         Me.SecondName.TabIndex = 2
-        Me.SecondName.Text = "Apellido"
+        Me.SecondName.Text = "Apellidos"
+        '
+        'Nombres
+        '
+        Me.Nombres.DataPropertyName = "Name"
+        Me.Nombres.HeaderText = "Nombre"
+        Me.Nombres.Name = "Nombres"
+        Me.Nombres.ReadOnly = True
+        '
+        'Apellidos
+        '
+        Me.Apellidos.DataPropertyName = "SecondName"
+        Me.Apellidos.HeaderText = "Apellido"
+        Me.Apellidos.Name = "Apellidos"
+        Me.Apellidos.ReadOnly = True
+        '
+        'Edad
+        '
+        Me.Edad.DataPropertyName = "Age"
+        Me.Edad.HeaderText = "Edad"
+        Me.Edad.Name = "Edad"
+        Me.Edad.ReadOnly = True
+        '
+        'Sexo
+        '
+        Me.Sexo.DataPropertyName = "Sex"
+        Me.Sexo.HeaderText = "Sexo"
+        Me.Sexo.Name = "Sexo"
+        Me.Sexo.ReadOnly = True
+        Me.Sexo.Visible = False
         '
         'PersonaFrm
         '
@@ -206,9 +288,9 @@ Partial Class PersonaFrm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Persona"
         CType(Me.GridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.menu.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.menu.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -227,5 +309,12 @@ Partial Class PersonaFrm
     Friend WithEvents BirthDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents menu As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents Sex As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Age As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Nombres As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Apellidos As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Edad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Sexo As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

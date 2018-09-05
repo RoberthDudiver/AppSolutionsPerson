@@ -16,10 +16,10 @@ Public Class Cone
 
     Public Shared Function DeletetDTPeople(ByVal Id As String) As DTPeople
         connect()
-        Dim item = bd.DTPeople.SingleOrDefault(Function(x) x.IDPeople = Id)
+        Dim item = bd.DTPeoples.SingleOrDefault(Function(x) x.IDPeople = Id)
         If item IsNot Nothing Then
             bd.Refresh(System.Data.Linq.RefreshMode.KeepCurrentValues, item)
-            bd.DTPeople.DeleteOnSubmit(item)
+            bd.DTPeoples.DeleteOnSubmit(item)
             bd.SubmitChanges()
             disconnet()
         Else
@@ -28,45 +28,54 @@ Public Class Cone
 
         Return item
     End Function
+
+    Public Shared Function GetAllVWPeopleGeneralView() As List(Of VWPeopleGeneral)
+        connect()
+        Dim item = bd.VWPeopleGenerals.ToList()
+        disconnet()
+        Return item
+    End Function
     Public Shared Function GetAllPeopleView() As List(Of VWInfoPeople)
         connect()
-        Dim item = bd.VWInfoPeople.ToList()
+        Dim item = bd.VWInfoPeoples.ToList()
         disconnet()
         Return item
     End Function
     Public Shared Function GetAllPeople() As List(Of DTPeople)
         connect()
-        Dim item = bd.DTPeople.ToList()
+        Dim item = bd.DTPeoples.ToList()
         disconnet()
         Return item
     End Function
     Public Shared Function GetDTDocumentsType() As List(Of DTDocumentsType)
         connect()
-        Dim items = bd.DTDocumentsType.ToList()
+        Dim items = bd.DTDocumentsTypes.ToList()
         disconnet()
         Return items
     End Function
-    Public Shared Function GetDTCountries() As List(Of DTCountries)
+    Public Shared Function GetDTCountries() As List(Of DTCountry)
         connect()
         Dim items = bd.DTCountries.ToList()
         disconnet()
         Return items
     End Function
-    Public Shared Function GetPeopleByID(ByVal Id As Int32) As DTPeople
-        connect()
-        Dim item = bd.DTPeople.ToList().Where(Function(x) x.IDPeople = Id).SingleOrDefault()
-        disconnet()
+    Public Shared Function GetPeopleByID(ByVal Id As Integer) As DTPeople
+
+        Dim item1 = GetAllPeople()
+
+        Dim item = item1.SingleOrDefault(Function(x) x.IDPeople = Id)
+
         Return item
     End Function
     Public Shared Function SetPeople(ByVal item As DTPeople) As DTPeople
         If item.IDPeople = 0 Then
             connect()
-            bd.DTPeople.InsertOnSubmit(item)
+            bd.DTPeoples.InsertOnSubmit(item)
             bd.SubmitChanges()
             disconnet()
         Else
             connect()
-            bd.DTPeople.Attach(item)
+            bd.DTPeoples.Attach(item)
             bd.Refresh(System.Data.Linq.RefreshMode.KeepCurrentValues, item)
             bd.SubmitChanges()
             disconnet()

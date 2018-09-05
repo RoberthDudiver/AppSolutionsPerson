@@ -121,7 +121,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Service References\ServicioSoapAsmx\AppWinPerson.ServicioSoapAsmx.DTCountries.datasource">
+    <None Include="Service References\ServicioSoapAsmx\AppWinPerson.ServicioSoapAsmx.DTCountry.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicioSoapAsmx\AppWinPerson.ServicioSoapAsmx.DTDocumentsType.datasource">
@@ -131,6 +131,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicioSoapAsmx\AppWinPerson.ServicioSoapAsmx.VWInfoPeople.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicioSoapAsmx\AppWinPerson.ServicioSoapAsmx.VWPeopleGeneral.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServicioSoapAsmx\Service1.wsdl" />

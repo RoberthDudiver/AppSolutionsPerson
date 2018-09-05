@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBPeople" Class="DbmlClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-S3587HV\MSSQLSERVER2;Initial Catalog=DBPeople;Integrated Security=True" SettingsObjectName="LinqConnection.My.MySettings" SettingsPropertyName="DBPeopleConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DTCountries" Member="DTCountries">
-    <Type Name="DTCountries">
+    <Type Name="DTCountry">
       <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DTPeople" Member="DTPeople">
+  <Table Name="dbo.DTPeople" Member="DTPeoples">
     <Type Name="DTPeople">
       <Column Name="IDPeople" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SecondName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DocumentID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TypeDocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
@@ -19,19 +19,29 @@
       <Column Name="PrincipalPhone" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="UpdateUpd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DTDocumentsType" Member="DTDocumentsType">
+  <Table Name="dbo.DTDocumentsType" Member="DTDocumentsTypes">
     <Type Name="DTDocumentsType">
       <Column Name="TypeDocumentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TypeDocument" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.VWInfoPeople" Member="VWInfoPeople">
+  <Table Name="dbo.VWPeopleGeneral" Member="VWPeopleGenerals">
+    <Type Name="VWPeopleGeneral">
+      <Column Name="FullName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="IDPeople" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VWInfoPeople" Member="VWInfoPeoples">
     <Type Name="VWInfoPeople">
       <Column Name="IDPeople" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SecondName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DocumentID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TypeDocumentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
@@ -42,6 +52,8 @@
       <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TypeDocument" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

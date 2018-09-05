@@ -9,7 +9,11 @@ Imports LinqConnection
 <ToolboxItem(False)> _
 Public Class Service1
     Inherits System.Web.Services.WebService
-    <WebMethod()> _
+    <WebMethod()>
+    Public Function GetAllVWPeopleGeneralView() As List(Of VWPeopleGeneral)
+        Return Cone.GetAllVWPeopleGeneralView()
+    End Function
+    <WebMethod()>
     Public Function GetAllPeopleView() As List(Of VWInfoPeople)
         Return Cone.GetAllPeopleView()
     End Function
@@ -27,8 +31,8 @@ Public Class Service1
         Return Cone.GetDTDocumentsType()
     End Function
 
-    <WebMethod()> _
-    Public Function GetDTCountries() As List(Of DTCountries)
+    <WebMethod()>
+    Public Function GetDTCountries() As List(Of DTCountry)
         Return Cone.GetDTCountries()
     End Function
     <WebMethod()> _
