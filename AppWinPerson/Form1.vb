@@ -75,9 +75,9 @@ Public Class PersonaFrm
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-
-        If (Name1.change And SecondName.change And DocumentID.change) Then
-            If MsgBox("¿Quiere guardar el registro?", MsgBoxStyle.Question, "Advertencia") = MsgBoxResult.Ok Then
+        ' se puede validad el cambio o no depende de la necesidad 
+        ' If (Name1.change And SecondName.change And DocumentID.change And Addres.change) Then
+        If MsgBox("¿Quiere guardar el registro?", MsgBoxStyle.Question, "Advertencia") = MsgBoxResult.Ok Then
                 Dim Person As ServicioSoapAsmx.DTPeople = New ServicioSoapAsmx.DTPeople()
                 Person.Name = Name1.Text
                 If (IsNothing(Itemselec) = False) Then
@@ -104,7 +104,7 @@ Public Class PersonaFrm
                 End Try
 
             End If
-        End If
+        ' End If
 
 
 
