@@ -69,7 +69,7 @@
                 <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
             </asp:GridView>
         </ContentTemplate>
-
+         
     </asp:UpdatePanel>
  
 </asp:Content>
