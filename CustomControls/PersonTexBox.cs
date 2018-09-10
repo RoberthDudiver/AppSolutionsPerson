@@ -6,6 +6,8 @@ using System.Text;
 using System.Windows.Forms;
 namespace CustomControls
 {
+
+    //control personalizado
     public class PersonTexBox : TextBox
     {
         protected override void OnPaint(PaintEventArgs e)
